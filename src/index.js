@@ -9,7 +9,9 @@ const toLowerCase = str => str.toLowerCase();
 
 const result = toLowerCase(wrapInDiv(trim(input)));
 
-const transform = compose(toLowerCase, wrapInDiv, trim);
+// const transform = compose(toLowerCase, wrapInDiv, trim);
+
+const transform = pipe(trim, wrapInDiv, toLowerCase)
 
 result = transform(input);
 
