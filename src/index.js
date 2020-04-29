@@ -1,4 +1,4 @@
-import { compose, pipe } from 'lodash/fp'
+import {  pipe } from 'lodash/fp'
 
 let input = '   JavaScript   ';
 let output = '<div>' + input.trim() + '<div>';
@@ -7,11 +7,11 @@ const trim = str => str.trim();
 const wrapInDiv = str => `<div>${str}</div>`;
 const toLowerCase = str => str.toLowerCase();
 
-const result = toLowerCase(wrapInDiv(trim(input)));
+let result = toLowerCase(wrapInDiv(trim(input)));
 
 // const transform = compose(toLowerCase, wrapInDiv, trim);
 
-const transform = pipe(trim, wrapInDiv, toLowerCase)
+const transform = pipe(trim, wrapInDiv, toLowerCase);
 
 result = transform(input);
 
