@@ -1,3 +1,5 @@
+import { compose, pipe } from 'lodash/fp'
+
 let input = '   JavaScript   ';
 let output = '<div>' + input.trim() + '<div>';
 
@@ -7,6 +9,8 @@ const toLowerCase = str => str.toLowerCase();
 
 const result = toLowerCase(wrapInDiv(trim(input)));
 
+const transform = compose(toLowerCase, wrapInDiv, trim);
 
+result = transform(input);
 
 console.log(result)
