@@ -7,4 +7,6 @@ const toLowerCase = str => str.toLowerCase();
 
 const result = toLowerCase(wrapInDiv(trim(input)));
 
+
+
 console.log(result)
